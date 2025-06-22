@@ -3,7 +3,7 @@
 A simple yet functional **Task Manager** web application built using **Java**, **Spring Boot**, **Thymeleaf**, and **MySQL**.  
 It allows users to efficiently manage daily tasks with options to create, filter, sort, and complete tasks in a responsive interface.
 
----
+
 
 ## 🚀 Features
 
@@ -18,7 +18,7 @@ It allows users to efficiently manage daily tasks with options to create, filter
 - 🌐 RESTful API for all operations
 - 🔓 CORS enabled for API access
 
----
+
 
 ## 💻 Technologies Used
 
@@ -39,7 +39,7 @@ It allows users to efficiently manage daily tasks with options to create, filter
 **Build Tool**  
 - Maven  
 
----
+
 
 ## ⚙️ Getting Started
 
@@ -50,7 +50,7 @@ It allows users to efficiently manage daily tasks with options to create, filter
 - Maven  
 - IDE like IntelliJ / VSCode  
 
----
+
 
 ### 🗄️ Database Setup
 
@@ -73,7 +73,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 ```
 
----
+
 
 ### ▶️ Run the App
 
@@ -110,7 +110,7 @@ mvn spring-boot\:run
 
 ```
 
----
+
 
 ## 📡 API Endpoints
 
@@ -125,7 +125,7 @@ mvn spring-boot\:run
 | GET    | /api/tasks/sorted              | Get tasks sorted by due date         |
 | GET    | /api/tasks/user/{username}     | Get tasks by username                |
 
----
+
 
 ## 📂 Project Structure
 
@@ -144,7 +144,7 @@ src/
 
 ```
 
----
+
 
 ## 🧠 Usage
 
@@ -154,7 +154,7 @@ src/
 - Filter by **status**, **due date**, or **username**  
 - UI dynamically updates with no page reloads
 
----
+
 
 ## 📝 Notes
 
@@ -162,21 +162,20 @@ src/
 - CORS is globally enabled via `@CrossOrigin(origins = "*")`  
 - Frontend uses Thymeleaf + Fetch API for async task updates
 
----
+
 
 ## 📜 License
 
 This project is licensed under the **MIT License**. See the `LICENSE` file for details.
 
----
+
 
 ## 📫 Contact
 
 For feedback, suggestions, or contributions:  
-📧 Email: `your-email@example.com`  
+📧 Email: `hdkorishettar@gmail.com`  
 🔗 GitHub Issues or Pull Requests welcome!
 
----
+
 
 ✅ Stay organized with your tasks — the efficient way!  
-```
