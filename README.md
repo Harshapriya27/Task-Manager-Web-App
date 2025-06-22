@@ -1,157 +1,182 @@
-# Task Manager Application
+# ✅ Task Manager Application
 
-A simple **Task Manager** web application built with **Spring Boot**, **Spring Data JPA**, **Thymeleaf**, and **MySQL**.  
-It allows users to create, view, update, filter, sort, and delete tasks. Tasks can be marked as completed ("Done") and once completed, cannot be reverted to pending.
-
----
-
-## Features
-
-- Add new tasks with title, description, due date, priority, and username.
-- View all tasks in a table with all details.
-- Mark tasks as **Done** (completed) — completed tasks cannot be marked pending again.
-- Filter tasks by completion status (Completed / Pending).
-- Sort tasks by due date.
-- Filter tasks by username.
-- Delete tasks.
-- Responsive UI with dynamic updates using AJAX (no page reload on add, update, delete).
-- RESTful API endpoints for all CRUD operations.
-- Cross-Origin Resource Sharing (CORS) enabled for API.
+A simple yet functional **Task Manager** web application built using **Java**, **Spring Boot**, **Thymeleaf**, and **MySQL**.  
+It allows users to efficiently manage daily tasks with options to create, filter, sort, and complete tasks in a responsive interface.
 
 ---
 
-## Technologies Used
+## 🚀 Features
 
-- Java 17+
-- Spring Boot 3.x
-- Spring Data JPA (Hibernate)
-- MySQL Database
-- Thymeleaf (Server-side HTML templating)
-- JavaScript (Fetch API for AJAX)
-- Maven (Build tool)
+- ✍️ Add tasks with **title, description, due date, priority**, and **username**
+- 📋 View all tasks in a dynamic table
+- ✅ Mark tasks as **Done** (irreversible once completed)
+- 🔎 Filter by **status** (Pending / Completed)
+- ⏳ Sort by **due date**
+- 👤 Filter by **username**
+- ❌ Delete tasks
+- ⚡ AJAX-powered UI (no page reloads)
+- 🌐 RESTful API for all operations
+- 🔓 CORS enabled for API access
 
 ---
 
-## Getting Started
+## 💻 Technologies Used
 
-### Prerequisites
+**Backend**  
+- Java 17+  
+- Spring Boot 3.x  
+- Spring Data JPA (Hibernate)  
+- RESTful API  
 
-- Java 17 or higher installed
-- MySQL Server running locally or remotely
-- Maven installed
-- IDE (IntelliJ IDEA, Eclipse, VSCode, etc.)
+**Frontend**  
+- Thymeleaf  
+- Bootstrap  
+- JavaScript (Fetch API)  
 
-### Setup MySQL Database
+**Database**  
+- MySQL  
 
-1. Create a database named `taskdb`:
+**Build Tool**  
+- Maven  
+
+---
+
+## ⚙️ Getting Started
+
+### 🛠️ Prerequisites
+
+- Java 17 or higher  
+- MySQL installed and running  
+- Maven  
+- IDE like IntelliJ / VSCode  
+
+---
+
+### 🗄️ Database Setup
+
+1. Create the database:
+
+```
 
 CREATE DATABASE taskdb;
 
-text
+```
 
-2. Update the database credentials in `src/main/resources/application.properties` if needed:
+2. Update your credentials in `src/main/resources/application.properties`:
 
-spring.datasource.url=jdbc:mysql://localhost:3306/taskdb
+```
+
+spring.datasource.url=jdbc\:mysql://localhost:3306/taskdb
 spring.datasource.username=root
 spring.datasource.password=root
+spring.jpa.hibernate.ddl-auto=update
 
-text
+```
 
 ---
 
-### Build and Run
+### ▶️ Run the App
 
-1. Clone this repository:
+1. Clone the repository:
 
-git clone https://github.com/yourusername/taskmanager.git
+```
+
+git clone github.com/yourusername/taskmanager.git
 cd taskmanager
 
-text
+```
 
-2. Build the project with Maven:
+2. Build the project:
+
+```
 
 mvn clean install
 
-text
+```
 
-3. Run the Spring Boot application:
+3. Run the application:
 
-mvn spring-boot:run
+```
 
-text
+mvn spring-boot\:run
 
-4. Open your browser and navigate to:
+```
 
-http://localhost:8080/
+4. Open browser and visit:
 
-text
+```
 
-You should see the Task Manager UI.
+[http://localhost:8080/](http://localhost:8080/)
 
----
-
-## API Endpoints
-
-| Method | Endpoint                 | Description                          |
-|--------|--------------------------|------------------------------------|
-| GET    | `/api/tasks`             | Get all tasks                      |
-| POST   | `/api/tasks`             | Create a new task                  |
-| GET    | `/api/tasks/{id}`        | Get task by ID                    |
-| PUT    | `/api/tasks/{id}`        | Update task by ID                 |
-| DELETE | `/api/tasks/{id}`        | Delete task by ID                 |
-| GET    | `/api/tasks/completed`   | Get tasks filtered by completion status (`?status=true/false`) |
-| GET    | `/api/tasks/sorted`      | Get all tasks sorted by due date  |
-| GET    | `/api/tasks/user/{username}` | Get tasks by username          |
+```
 
 ---
 
-## Project Structure
+## 📡 API Endpoints
+
+| Method | Endpoint                       | Description                          |
+|--------|--------------------------------|--------------------------------------|
+| GET    | /api/tasks                     | Get all tasks                        |
+| POST   | /api/tasks                     | Create a new task                    |
+| GET    | /api/tasks/{id}                | Get a task by ID                     |
+| PUT    | /api/tasks/{id}                | Update a task by ID                  |
+| DELETE | /api/tasks/{id}                | Delete a task                        |
+| GET    | /api/tasks/completed           | Filter tasks by completion status    |
+| GET    | /api/tasks/sorted              | Get tasks sorted by due date         |
+| GET    | /api/tasks/user/{username}     | Get tasks by username                |
+
+---
+
+## 📂 Project Structure
+
+```
 
 src/
 ├── main/
-│ ├── java/com/example/taskmanager/
-│ │ ├── controller/TaskController.java
-│ │ ├── model/Task.java
-│ │ ├── repository/TaskRepository.java
-│ │ └── TaskmanagerApplication.java
-│ └── resources/
-│ ├── templates/index.html
-│ └── application.properties
+│   ├── java/com/example/taskmanager/
+│   │   ├── controller/TaskController.java
+│   │   ├── model/Task.java
+│   │   ├── repository/TaskRepository.java
+│   │   └── TaskmanagerApplication.java
+│   └── resources/
+│       ├── templates/index.html
+│       └── application.properties
 
-text
-
----
-
-## Usage
-
-- Use the form at the top to add new tasks.
-- Tasks appear instantly in the table below without page reload.
-- Click **Pending** button to mark a task as **Done**. Completed tasks cannot be reverted.
-- Use filter buttons to view completed or pending tasks.
-- Sort tasks by due date.
-- Filter tasks by username.
-- Delete tasks using the red **Delete** button.
+```
 
 ---
 
-## Notes
+## 🧠 Usage
 
-- The project uses `spring.jpa.hibernate.ddl-auto=update` to automatically create/update tables.
-- CORS is enabled for all origins (`@CrossOrigin(origins = "*")`) for API accessibility.
-- The frontend uses Thymeleaf for initial page rendering and JavaScript Fetch API for dynamic updates.
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Add new tasks using the form  
+- View or delete tasks in the table  
+- Mark tasks as **Done** (cannot revert)  
+- Filter by **status**, **due date**, or **username**  
+- UI dynamically updates with no page reloads
 
 ---
 
-## Contact
+## 📝 Notes
 
-For questions or suggestions, please open an issue or contact me at [your-email@example.com].
+- `spring.jpa.hibernate.ddl-auto=update` auto-creates tables  
+- CORS is globally enabled via `@CrossOrigin(origins = "*")`  
+- Frontend uses Thymeleaf + Fetch API for async task updates
 
 ---
 
-Enjoy managing your tasks efficiently! 🚀
+## 📜 License
+
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.
+
+---
+
+## 📫 Contact
+
+For feedback, suggestions, or contributions:  
+📧 Email: `your-email@example.com`  
+🔗 GitHub Issues or Pull Requests welcome!
+
+---
+
+✅ Stay organized with your tasks — the efficient way!  
+```
